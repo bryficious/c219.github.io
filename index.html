@@ -1,0 +1,138 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 10px;
+        }
+
+        /* Clearfix (clear floats) */
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .container {
+            padding-top: 30px;
+            padding-left: 200px;
+            padding-right: 50px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 20px 20px;
+            text-decoration: none;
+            font-family: 'Trebuchet MS', sans-serif;
+        }
+
+        li a:hover {
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body class="body">
+    <ul>
+        <li><a href="About_me.html">ABOUT ME</a></li>
+        <li><a href="FavGame.html">GAME</a></li>
+    </ul>
+    <center>
+        <h1 style="font-size:60px;">About Me</h1>
+
+    </center>
+    <hr>
+    <div class="container">
+
+        <div style="text-align:left"><img align="left" src="pic.jpg" height="450">
+            <div class="pad">
+                <div class="column">
+                    Hi, I am Bryan. I am a UI/UX Designer that helps people to design websites and will be interning in
+                    Year 3 in Republic Polytechnic.
+                    I have learn how to use PhotoShop and Illustrator to design portfolios and websites. During my free
+                    time, I would usually hang out with
+                    my friends or play video games with them.
+                    <br>
+                    <br>
+                    Born in:<div class="demo6"></div>
+                    <br>
+                    <div class="play btn">Play</div>
+                    <div class="pause btn">Pause</div>
+                    <div class="restart btn">Restart</div>
+                    <br>
+                    <a href="FavGame.html" class="w3-button w3-red">Next Page > </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script>
+        anime({
+            targets: ".container",
+            translateX: 0,
+            translateY: 0,
+            rotate: 360,
+            opacity: [0, 1],
+            delay: 500
+        });
+        anime({
+            targets: '.column',
+            translateY: -300,
+            rotate: 180,
+            delay: anime.stagger(300, { start: 1000 }),
+            direction: 'alternate'
+        });
+        anime({
+            targets: '.demo6',
+            innerHTML: [0, 2003], //start and end values
+            easing: 'linear',
+            round: 1, //rounds off to zero decimal places
+            duration: 1000
+        });
+
+
+        var animation = anime({
+            targets: '.body',
+            translateX: 0,
+            scale: 1,
+            backgroundColor: '#b5dcf5',
+            easing: 'easeInOutExpo',
+            direction: 'alternate',
+            duration: 2000,
+            loop: true,
+            autoplay: false
+        });
+        document.querySelector('.play').onclick = animation.play;
+        document.querySelector('.pause').onclick = animation.pause;
+        document.querySelector('.restart').onclick = animation.restart;
+
+    </script>
+</body>
+
+</html>
